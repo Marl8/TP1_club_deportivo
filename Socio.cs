@@ -8,15 +8,15 @@ namespace TP1_club_deportivo
 {
     internal class Socio
     {
-        public int Id { get; set; }
+        public int Id { get; }
         public string Nombre { get; set; }
-        public List<Actividad> actividades;
+        public List<Actividad> Actividades { get; }
 
         public Socio(int id, string nombre)
         {
             Id = id;
             Nombre = nombre;
-            this.actividades = new List <Actividad>();
+            this.Actividades = new List <Actividad>();
         }
 
         public override string ToString()

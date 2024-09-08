@@ -42,7 +42,16 @@ namespace TP1_club_deportivo
             bool guardado = false;
             if (!validarExistenciaSocio(nombre))
             {
-                int id = this.ListaSocios.Count + 1;
+                int id;
+                if(this.ListaSocios.Count == 0) {
+                    //Si la lista esta vacia el id será 1, ya que será su primer elemento
+                    id = this.ListaSocios.Count + 1;
+                }
+                else
+                {
+                    // Si No está vacia obtenemos al id del último elemento de la lista y le sumamos 1
+                    id = this.ListaSocios[ListaSocios.Count - 1].Id + 1;
+                }
                 Socio socio = new Socio(id, nombre);
                 ListaSocios.Add(socio);
                 guardado = true;
@@ -93,12 +102,14 @@ namespace TP1_club_deportivo
                 mensaje = "ACTIVIDAD INEXISTENTE";
             }
            
-            if (socio != null && actividad != null && socio.actividades.Count < 3)
+            if (socio != null && actividad != null && socio.Actividades.Count < 3)
             {
-                socio.actividades.Add(actividad);
-                actividad.Cupo = actividad.Cupo - 1;
+                socio.Actividades.Add(actividad);
+
+                // Reservamos un cupo
+                actividad.Cupo--;
                 mensaje = "INSCRIPCIÓN EXITOSA";
-            }else if(socio.actividades.Count <= 3)
+            }else if(socio != null && actividad != null && socio.Actividades.Count >= 3)
             {
                 mensaje = "TOPE DE ACTIVIDADES ALCANZADO";
             }
