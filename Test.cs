@@ -35,7 +35,9 @@ internal class Test
         Console.WriteLine("-------------------------------------------------------\n");
 
         Console.WriteLine(club.inscribirActividad("Natacion", 1));
+        Console.WriteLine(club.inscribirActividad("Basquet", 2));
         Console.WriteLine("El cupo actualizado para " + club.ListaActividades[2].Nombre + " es " + club.ListaActividades[2].Cupo);
+        Console.WriteLine("El cupo actualizado para " + club.ListaActividades[1].Nombre + " es " + club.ListaActividades[1].Cupo);
         Console.WriteLine("-------------------------------------------------------\n");
 
         // Excede el límite de actividades permitido.
