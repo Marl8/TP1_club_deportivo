@@ -5,7 +5,7 @@ internal class Test
 {
     public static void Main() { 
     
-        // Creamos lo Objetos
+        // Creamos los Objetos
         ClubDeportivo club = new ClubDeportivo();
         club.guardarActividad("Tenis", 35);
         club.guardarActividad("Basquet", 24);
