@@ -56,6 +56,10 @@ namespace TP1_club_deportivo
                 ListaSocios.Add(socio);
                 guardado = true;
             }
+           else
+            {
+                Console.WriteLine($"El socio {nombre} ya se encuentra registrado");
+            }
             return guardado;
         }
 
@@ -84,6 +88,10 @@ namespace TP1_club_deportivo
                 Actividad actividad = new Actividad(nombre, cupo);
                 this.ListaActividades.Add(actividad);
                 guardado = true;
+            }
+            else
+            {
+                Console.WriteLine($"La actividad {nombre} ya se encuentra registrado");
             }
             return guardado;
         }

@@ -18,8 +18,9 @@ internal class Test
         Console.WriteLine("CLUB DEPORTIVO");
         Console.WriteLine("-------------------------------------------------------\n");
         
-        Console.WriteLine("Se ha inscripto el socio: " + club.ListaSocios[0]);
-        Console.WriteLine("Se ha inscripto el socio: " + club.ListaSocios[1]);
+        Console.WriteLine("Se ha inscripto: " + club.ListaSocios[0]);
+        Console.WriteLine("Se ha inscripto: " + club.ListaSocios[1]);
+        club.altaSocio("Juan Perez");
         Console.WriteLine("-------------------------------------------------------\n");
 
         // Inscribimos al socio en las actividades.
