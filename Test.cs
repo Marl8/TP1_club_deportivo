@@ -28,6 +28,7 @@ internal class Test
         Console.WriteLine("El cupo actualizado para " + club.ListaActividades[0].Nombre + " es " + club.ListaActividades[0].Cupo);
         Console.WriteLine(club.inscribirActividad("Basquet", 1));
         Console.WriteLine("El cupo actualizado para " + club.ListaActividades[1].Nombre + " es " + club.ListaActividades[1].Cupo);
+        Console.WriteLine(club.inscribirActividad("Tenis", 1));
         Console.WriteLine("-------------------------------------------------------\n");
 
         // Socio y actividad inexistente.

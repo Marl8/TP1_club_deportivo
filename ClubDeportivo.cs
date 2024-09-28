@@ -112,18 +112,34 @@ namespace TP1_club_deportivo
 
             if (socio != null && actividad != null && socio.Actividades.Count < 3)
             {
-                socio.Actividades.Add(actividad);
+                bool existe = false;
+                foreach (Actividad a in socio.Actividades)
+                {
+                    if (a.Nombre.Equals(actividad.Nombre))
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+                if (existe)
+                {
+                    mensaje = "El socio ya esta inscripto en esta Actividad";
+                }
+                else {
+                    socio.Actividades.Add(actividad);
 
-                // Reservamos un cupo validando previamente que exitan cupos disponibles
-                if (actividad.Cupo > 0)
-                {
-                    actividad.Cupo--;
-                    mensaje = "INSCRIPCIÓN EXITOSA";
+                    // Reservamos un cupo validando previamente que exitan cupos disponibles
+                    if (actividad.Cupo > 0)
+                    {
+                        actividad.Cupo--;
+                        mensaje = "INSCRIPCIÓN EXITOSA";
+                    }
+                    else
+                    {
+                        mensaje = "NO HAY CUPOS DISPONIBLES";
+                    }
                 }
-                else
-                {
-                    mensaje = "NO HAY CUPOS DISPONIBLES";
-                }
+               
             }else if(socio != null && actividad != null && socio.Actividades.Count >= 3)
             {
                 mensaje = "TOPE DE ACTIVIDADES ALCANZADO";
